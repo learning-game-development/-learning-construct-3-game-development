@@ -1,0 +1,63 @@
+{
+	"name": "Explosion",
+	"plugin-id": "Sprite",
+	"sid": 452463398040336,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 415341271061009
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 120,
+						"height": 103,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5501185,
+						"collisionPoly": {
+							"points": [
+								0.008333333333333333,
+								0.009708737864077669,
+								0.5,
+								0.009708737864077669,
+								0.9833333333333333,
+								0.009708737864077669,
+								0.9833333333333333,
+								0.5,
+								0.9833333333333333,
+								0.9805825242718447,
+								0.5,
+								0.9805825242718447,
+								0.008333333333333333,
+								0.9805825242718447,
+								0.008333333333333333,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 471264671400634,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
