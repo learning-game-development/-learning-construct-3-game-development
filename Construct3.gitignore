@@ -1,0 +1,8 @@
+## Construct 3 ##
+
+# Construct 3 User Interface
+*.uistate.json
+
+# Temporary files
+*.c3proj.backup*
+*.c3proj.autosave*
