@@ -1,0 +1,56 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 475015762104196
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Player",
+					"sid": 844785135432509,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				}
+			],
+			"sid": 784240131879641
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 688978547125798,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 561763236399429,
+					"parameters": {
+						"object": "Bullet",
+						"layer": "0",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 165241147443608
+		}
+	],
+	"sid": 859980584882965
+}
