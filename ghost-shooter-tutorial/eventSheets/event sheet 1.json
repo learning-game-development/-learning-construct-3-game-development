@@ -2,6 +2,56 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Player total score",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 780415022641904
+		},
+		{
+			"eventType": "variable",
+			"name": "GameRunning",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 387684370834312
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 889372440942634
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "Monster",
+					"sid": 689952057944869,
+					"parameters": {
+						"angle": "random(360)"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 166228541743218,
+					"parameters": {
+						"variable": "GameRunning",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 922465521803240
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -19,9 +69,45 @@
 						"x": "Mouse.X",
 						"y": "Mouse.Y"
 					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Score",
+					"sid": 693286579436872,
+					"parameters": {
+						"text": "\"Score: \" & Score"
+					}
 				}
 			],
 			"sid": 784240131879641
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 754970157647811,
+					"parameters": {
+						"interval-seconds": "3.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 532795324001959,
+					"parameters": {
+						"object-to-create": "Monster",
+						"layer": "0",
+						"x": "LayoutWidth + 100",
+						"y": "random(LayoutHeight)",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 310288144811507
 		},
 		{
 			"eventType": "block",
@@ -50,6 +136,213 @@
 				}
 			],
 			"sid": 165241147443608
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Bullet",
+					"sid": 578676557501178,
+					"parameters": {
+						"object": "Monster"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Monster",
+					"sid": 432649891973779,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Bullet",
+					"sid": 497608795030338,
+					"parameters": {
+						"object": "Explosion",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 753864277972071
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 751674986887825,
+					"parameters": {
+						"variable": "Score",
+						"value": "3"
+					}
+				}
+			],
+			"sid": 849316358813438
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "Monster",
+					"sid": 944431247757525
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Monster",
+					"sid": 226765469284153,
+					"parameters": {
+						"x": "Player.X",
+						"y": "Player.Y"
+					}
+				}
+			],
+			"sid": 695277506296834
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Monster",
+					"sid": 877027822963478,
+					"parameters": {
+						"instance-variable": "health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Monster",
+					"sid": 560462640675394,
+					"parameters": {
+						"object": "Explosion",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Monster",
+					"sid": 187670758449167
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 289788942619652,
+					"parameters": {
+						"variable": "Score",
+						"value": "10"
+					}
+				}
+			],
+			"sid": 958405290596604
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Monster",
+					"sid": 935177645638809,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Player",
+					"sid": 927511474759068
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "GameOver",
+					"sid": 324528479574381,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 931369738900006,
+					"parameters": {
+						"variable": "GameRunning",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 415160258092790
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 147393077873401,
+					"parameters": {
+						"key": 13
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 604934487489208,
+					"parameters": {
+						"variable": "GameRunning"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 371780922210233
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 415745329966348
+				}
+			],
+			"sid": 316723412766768
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-visible",
+					"objectClass": "Bullet",
+					"sid": 935427124562754,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 410766217152025
+				}
+			],
+			"sid": 557597312169163
 		}
 	],
 	"sid": 859980584882965

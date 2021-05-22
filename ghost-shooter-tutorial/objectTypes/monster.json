@@ -3,7 +3,14 @@
 	"plugin-id": "Sprite",
 	"sid": 953249222946236,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "Monster health counter",
+			"sid": 480743807785153
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Bullet",

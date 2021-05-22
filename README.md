@@ -11,7 +11,7 @@ Projects, samples and templates created to learn game development in [Construct 
 
 :link: [Tutorials][tutorials]
 
-1. :o: [Beginner's Guide to Construct 3](ghost-shooter-tutorial/)
+1. :heavy_check_mark: [Beginner's Guide to Construct 3](ghost-shooter-tutorial/) (Ghost Shooter)
 
 ### Other Tutorials and Courses
 

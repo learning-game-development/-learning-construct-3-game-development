@@ -31,6 +31,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -87,7 +103,10 @@
 			"Bullet",
 			"Mouse",
 			"Monster",
-			"Explosion"
+			"Explosion",
+			"Score",
+			"GameOver",
+			"Keyboard"
 		],
 		"subfolders": []
 	},

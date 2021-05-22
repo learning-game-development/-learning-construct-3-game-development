@@ -2,7 +2,7 @@
 	"name": "Layout 1",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "Game",
 			"overriden": 0,
 			"instances": [
 				{
@@ -73,8 +73,8 @@
 						}
 					},
 					"world": {
-						"x": 217,
-						"y": 174,
+						"x": 249,
+						"y": 232,
 						"width": 108,
 						"height": 103,
 						"originX": 0.5,
@@ -143,7 +143,9 @@
 						"live-preview": false
 					},
 					"uid": 6,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"health": 5
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -158,8 +160,8 @@
 						}
 					},
 					"world": {
-						"x": 1470,
-						"y": 118,
+						"x": 1087,
+						"y": 100,
 						"width": 142,
 						"height": 102,
 						"originX": 0.5105633802816901,
@@ -211,7 +213,8 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0
+						"zElevation": 0,
+						"blendMode": "additive"
 					}
 				},
 				{
@@ -224,7 +227,9 @@
 						"live-preview": false
 					},
 					"uid": 8,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"health": 5
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -239,8 +244,8 @@
 						}
 					},
 					"world": {
-						"x": 1461,
-						"y": 392,
+						"x": 1568,
+						"y": 199,
 						"width": 142,
 						"height": 102,
 						"originX": 0.5105633802816901,
@@ -265,7 +270,9 @@
 						"live-preview": false
 					},
 					"uid": 9,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"health": 5
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -280,8 +287,8 @@
 						}
 					},
 					"world": {
-						"x": 1324,
-						"y": 630,
+						"x": 1237,
+						"y": 534,
 						"width": 142,
 						"height": 102,
 						"originX": 0.5105633802816901,
@@ -306,7 +313,9 @@
 						"live-preview": false
 					},
 					"uid": 10,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"health": 5
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -321,8 +330,8 @@
 						}
 					},
 					"world": {
-						"x": 1114,
-						"y": 813,
+						"x": 1549,
+						"y": 832,
 						"width": 142,
 						"height": 102,
 						"originX": 0.5105633802816901,
@@ -347,7 +356,9 @@
 						"live-preview": false
 					},
 					"uid": 11,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"health": 5
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -362,8 +373,8 @@
 						}
 					},
 					"world": {
-						"x": 732,
-						"y": 818,
+						"x": 1087,
+						"y": 866,
 						"width": 142,
 						"height": 102,
 						"originX": 0.5105633802816901,
@@ -388,7 +399,9 @@
 						"live-preview": false
 					},
 					"uid": 12,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"health": 5
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -403,8 +416,94 @@
 						}
 					},
 					"world": {
-						"x": 325,
-						"y": 820,
+						"x": 740,
+						"y": 611,
+						"width": 142,
+						"height": 102,
+						"originX": 0.5105633802816901,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Monster",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 13,
+					"instanceVariables": {
+						"health": 5
+					},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 80,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 293,
+						"y": 513,
+						"width": 142,
+						"height": 102,
+						"originX": 0.5105633802816901,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Monster",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 14,
+					"instanceVariables": {
+						"health": 5
+					},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 80,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 117,
+						"y": 880,
 						"width": 142,
 						"height": 102,
 						"originX": 0.5105633802816901,
@@ -438,6 +537,119 @@
 			"isTransparent": false,
 			"parallaxX": 1,
 			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "HUD",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "Score",
+					"properties": {
+						"text": "Score: 000",
+						"enable-bbcode": true,
+						"font": "Candara",
+						"size": 24,
+						"line-height": 0,
+						"bold": true,
+						"italic": true,
+						"color": [
+							1,
+							1,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 15,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 13,
+						"y": 13,
+						"width": 240,
+						"height": 50,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GameOver",
+					"properties": {
+						"text": "Game Over",
+						"enable-bbcode": true,
+						"font": "Candara",
+						"size": 48,
+						"line-height": 0,
+						"bold": true,
+						"italic": true,
+						"color": [
+							1,
+							1,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": false,
+						"origin": "top-left"
+					},
+					"uid": 16,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 264,
+						"y": 178,
+						"width": 300,
+						"height": 100,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 624527579767568,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"useRenderCells": false,
