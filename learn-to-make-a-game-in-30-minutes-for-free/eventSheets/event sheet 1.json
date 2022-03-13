@@ -1,0 +1,272 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "CollectableSpawnTime",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 732580687330657
+		},
+		{
+			"eventType": "variable",
+			"name": "TotalCollected",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 274832818363470
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "System",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 718697616411720
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "GameOver",
+							"sid": 714250211861649,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 348594432736594
+						}
+					],
+					"sid": 474147136444742
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 162467631046527
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 114594225054435,
+							"parameters": {
+								"text": "\"Collected: \" & TotalCollected"
+							}
+						}
+					],
+					"sid": 166196125425237
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 227733461244003,
+							"parameters": {
+								"interval-seconds": "CollectableSpawnTime"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 465836877846022,
+							"parameters": {
+								"object-to-create": "Collectable",
+								"layer": "0",
+								"x": "random(50, 800)",
+								"y": "random(50, 430)",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 765591953253576,
+							"parameters": {
+								"object-to-create": "Collectable",
+								"layer": "0",
+								"x": "random(50, 800)",
+								"y": "random(50, 430)",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 238681243525631,
+							"parameters": {
+								"object-to-create": "Collectable",
+								"layer": "0",
+								"x": "random(50, 800)",
+								"y": "random(50, 430)",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 515429476871300
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 111445322248922,
+							"parameters": {
+								"interval-seconds": "CollectableSpawnTime * 3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 346437065467922,
+							"parameters": {
+								"object-to-create": "BadCollectable",
+								"layer": "0",
+								"x": "random(50, 800)",
+								"y": "random(50, 430)",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 446564601869527
+				}
+			],
+			"sid": 651338697813879
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 825656201204172
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player",
+							"sid": 244037275420137,
+							"parameters": {
+								"x": "Touch.X",
+								"y": "Touch.Y"
+							}
+						}
+					],
+					"sid": 466912261766804
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player",
+							"sid": 228612337049345,
+							"parameters": {
+								"object": "Collectable"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Collectable",
+							"sid": 163207955365407
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 935499223633457,
+							"parameters": {
+								"variable": "TotalCollected",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 789132998375599
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player",
+							"sid": 618609247573186,
+							"parameters": {
+								"object": "BadCollectable"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "BadCollectable",
+							"sid": 526621823589661
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player",
+							"sid": 350668135755888
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "GameOver",
+							"sid": 230864150319780,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 755616894325907,
+							"parameters": {
+								"seconds": "3.0"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 302699849972454
+						}
+					],
+					"sid": 388712551810533
+				}
+			],
+			"sid": 131388251388948
+		}
+	],
+	"sid": 432348148613993
+}
