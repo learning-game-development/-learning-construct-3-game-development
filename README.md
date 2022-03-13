@@ -12,6 +12,7 @@ Projects, samples and templates created to learn game development in [Construct 
 :link: [construct.net Tutorials][tutorials]
 
 1. :heavy_check_mark: [Beginner's Guide to Construct 3](ghost-shooter-tutorial/) (Ghost Shooter)
+2. :heavy_check_mark: [How to Make a Platformer Game](platformer-tutorial/)
 
 ### Other Tutorials and Courses
 
