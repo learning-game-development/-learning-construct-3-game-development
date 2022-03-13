@@ -2,12 +2,44 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Player score",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 114185191762574
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "System",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [],
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 762218959035078
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 300843583119839,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 222629368461945
+				}
+			],
 			"sid": 797283683263849
 		},
 		{
@@ -320,6 +352,15 @@
 									}
 								},
 								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 875060926377911,
+									"parameters": {
+										"variable": "Score",
+										"value": "10"
+									}
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
 									"sid": 481152257218269,
@@ -459,6 +500,66 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerBox",
+							"sid": 695122177804994,
+							"parameters": {
+								"object": "Jewel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 966599488403167,
+							"parameters": {
+								"variable": "Score",
+								"value": "3"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Jewel",
+							"sid": 649822743417382
+						}
+					],
+					"sid": 574774479819095
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerBox",
+							"sid": 481509529932964,
+							"parameters": {
+								"object": "Crystal"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 906707548430126,
+							"parameters": {
+								"variable": "Score",
+								"value": "8"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Crystal",
+							"sid": 320578380345917
+						}
+					],
+					"sid": 257149114078207
 				}
 			],
 			"sid": 363978093574736

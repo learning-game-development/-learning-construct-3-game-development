@@ -1,0 +1,63 @@
+{
+	"name": "Crystal",
+	"plugin-id": "Sprite",
+	"sid": 752836198968906,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 388515561793038
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5017519,
+						"collisionPoly": {
+							"points": [
+								0.1875,
+								0.2,
+								0.5,
+								0,
+								0.78125,
+								0.2,
+								0.9375,
+								0.5,
+								0.84375,
+								0.8333333333333334,
+								0.5,
+								0.9333333333333333,
+								0.125,
+								0.8333333333333334,
+								0.03125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 753404400011658,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -39,6 +39,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -69,6 +77,14 @@
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
 		}
 	],
 	"uniqueId": "vjgxlvvgjt1",
@@ -80,7 +96,10 @@
 			"PlayerBox",
 			"Keyboard",
 			"Enemy",
-			"EdgeMarker"
+			"EdgeMarker",
+			"Jewel",
+			"ScoreText",
+			"Crystal"
 		],
 		"subfolders": []
 	},
