@@ -165,7 +165,7 @@
 		"author": "Quintin Henn",
 		"authorEmail": "quintin.henn@gmail.com",
 		"authorWebsite": "https://skerwe.web.za",
-		"appId": "za.web.skerwe.game.tutorial",
+		"appId": "za.web.skerwe.learning.construct3.awesomegame",
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
